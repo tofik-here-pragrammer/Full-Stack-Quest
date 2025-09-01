@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Quest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    
+    
+    <audio id="click-sound" src="click.mp3"></audio>
+    <div id="game-container" class="container bg-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border-4 border-lime-400">
+        <!-- Language Selection Screen -->
+        <div id="language-screen" class="text-center fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-lime-400">Full Stack Quest</h1>
+            <p class="text-lg mb-8">Choose your test subject:</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="HTML">HTML</button>
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="CSS">CSS</button>
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="JavaScript">JavaScript</button>
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="Node.js">Node.js</button>
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="React">React</button>
+                <button class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500" data-lang="Full Stack">Full Stack</button>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="text-center hidden fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-lime-400" id="quiz-title"></h1>
+            <p class="text-lg mb-8" id="quiz-desc"></p>
+            <button id="start-button" class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500">Start Quest</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="hidden fade-in">
+            <div class="flex justify-between items-center mb-6">
+                <p id="score-display" class="text-2xl">Score: 0</p>
+                <div class="w-1/2 bg-gray-700 rounded-full h-4">
+                    <div id="progress-bar" class="bg-lime-400 h-4 rounded-full transition-all duration-100 ease-linear"></div>
+                </div>
+            </div>
+            <p id="question-text" class="text-2xl md:text-3xl font-semibold mb-6 text-center"></p>
+            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Buttons will be generated here -->
+            </div>
+            <p id="feedback-message" class="text-center text-xl mt-6 font-bold"></p>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden text-center fade-in">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-lime-400">Quest Complete!</h2>
+            <p id="final-score" class="text-2xl mb-8"></p>
+            <p id="final-message" class="text-lg mb-8"></p>
+            <button id="restart-button" class="btn bg-lime-400 text-gray-900 font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-lime-500">Play Again</button>
+        </div>
+    </div>
+
+
+    <script src="javascript.js"></script>
+</body>
+</html>
